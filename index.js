@@ -92,7 +92,7 @@ app.get("/messages",apiKeyAuth ,async (req, res) => {
     console.error('Error fetching messages:', error);
     res.status(500).json({ error: 'Failed to fetch messages' });
   }
-});
+}); 
 
 
 server.listen(process.env.PORT || 3009)
