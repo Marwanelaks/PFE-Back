@@ -13,7 +13,8 @@ const { Server } = require("socket.io");
 require("dotenv").config();
 const io = new Server(server,{
   cors: { 
-    origin: "https://pfe-portfolio.netlify.app"
+    origin: "http://localhost:3000/",
+    allowedHeaders: ["Content-Type", "Authorization"],
   }
 });
 const storage = multer.diskStorage({
