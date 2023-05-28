@@ -11,11 +11,12 @@ const {Uploadimgs,Deleteimgs} = require("./Cloudinary")
 const server = http.createServer(app)
 const { Server } = require("socket.io");
 require("dotenv").config();
-const io = new Server(server,{
-  cors: { 
-    origin: "http://localhost:3000/",
+const io = new Server(server, {
+  cors: {
+    origin: ["http://localhost:3000"],
+    methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
-  }
+  },
 });
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
